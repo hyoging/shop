@@ -67,4 +67,21 @@ public class ThymeleafExController {
         model.addAttribute("itemDtoList", itemDtoList);
         return "thymeleafEx/thymeleafEx04";
     }
+
+    @GetMapping(value = "/ex05")
+    public String thymeleafExample05(Model model) {
+        return "thymeleafEx/thymeleafEx05";
+    }
+    @GetMapping(value = "/ex06")
+    public String thymeleafExample06(Model model, String param1, String param2) {
+        //ex05에서 param값들을 컨트롤러 전달받고
+        //전달받은 param값을 다시 ex06으로 전달
+        model.addAttribute("param1", param1);
+        model.addAttribute("param2", param2);
+        return "thymeleafEx/thymeleafEx06";
+    }
+    @GetMapping(value = "/ex07")
+    public String thymeleafExample07() {
+        return "thymeleafEx/thymeleafEx07";
+    }
 }
